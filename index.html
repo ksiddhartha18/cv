@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. Siddhartha | Portfolio CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Modern Strong Theme: Navy Blue & Black Gradient */
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --text: #e6f1ff;
+            --text-light: #ccd6f6;
+            --card-bg: rgba(23, 42, 69, 0.7);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .header-text {
+            flex: 2;
+        }
+
+        .profile-photo {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-item {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        i {
+            margin-right: 0.5rem;
+            width: 20px;
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            margin-top: 0.8rem;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .edu-item, .project-item, .exp-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(100, 255, 218, 0.3);
+        }
+
+        .edu-item:last-child, .project-item:last-child, .exp-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .institution, .tech, .org {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 0.4rem 0;
+        }
+
+        .details {
+            font-size: 0.95rem;
+            margin: 0.4rem 0;
+            color: var(--text-light);
+        }
+
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin-top: 1.5rem;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-text">
+                <h1>K. Siddhartha</h1>
+                <p class="subtitle">B.Tech in Computer Science & Engineering | South Asian University (2024-2028)</p>
+            </div>
+            <div class="profile-photo">
+                <img src="WhatsApp Image 2025-05-12 at 21.44.55_b527bb38.jpg" alt="K. Siddhartha Profile Photo">
+            </div>
+        </header>
+
+        <section class="contact">
+            <h2><i class="fas fa-id-card"></i> Contact</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> siddhartha.k@example.com</li>
+                        <li><i class="fas fa-phone"></i> +91 XXXXXXXXXX</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <ul>
+                        <li><i class="fab fa-linkedin"></i> linkedin.com/in/ksiddhartha</li>
+                        <li><i class="fab fa-github"></i> github.com/ksiddhartha</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2><i class="fas fa-user"></i> Professional Summary</h2>
+            <p>A passionate first-year <strong>B.Tech CSE</strong> student at <strong>South Asian University</strong> with expertise in Python, Web Development, and problem-solving. Eager to build innovative tech solutions and contribute to open-source projects. Strong foundation in algorithms and data structures with competitive programming experience.</p>
+            <p>Currently exploring Artificial Intelligence and Machine Learning concepts while honing my full-stack development skills. Committed to continuous learning and applying technical knowledge to solve real-world problems.</p>
+        </section>
+
+        <section class="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="edu-item">
+                <h3>Bachelor of Technology in Computer Science & Engineering</h3>
+                <p class="institution">South Asian University, New Delhi</p>
+                <p class="details">2024 - 2028 | Current CGPA: 8.5/10</p>
+                <p>Relevant Coursework: Data Structures & Algorithms, OOPs, Database Systems, Web Technologies, Computer Networks, Operating Systems</p>
+            </div>
+            <div class="edu-item">
+                <h3>Senior Secondary (XII), CBSE</h3>
+                <p class="institution">Delhi Public School, New Delhi</p>
+                <p class="details">2022 - 2023 | Percentage: 92%</p>
+                <p>Stream: Science (PCM with Computer Science)</p>
+                <p>Achievements: School Topper in Computer Science, Gold Medalist in National Science Olympiad</p>
+            </div>
+            <div class="edu-item">
+                <h3>Secondary (X), CBSE</h3>
+                <p class="institution">Delhi Public School, New Delhi</p>
+                <p class="details">2020 - 2021 | Percentage: 94%</p>
+                <p>Activities: School Science Club President, District-level Chess Player</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python (Advanced)</li>
+                            <li>C (Intermediate)</li>
+                            <li>Java (Basic)</li>
+                            <li>JavaScript (Intermediate)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="skill-category">
+                        <h4>Web Development</h4>
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>React.js</li>
+                            <li>Bootstrap</li>
+                            <li>Node.js (Basic)</li>
+                            <li>Express.js (Basic)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Linux</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+            <div class="project-item">
+                <h3>Student Management System</h3>
+                <p class="tech">Python | MySQL | Tkinter</p>
+                <p>A comprehensive CLI application to manage student records, grades, and attendance with database integration. Features include:</p>
+                <ul>
+                    <li>CRUD operations for student data</li>
+                    <li>Grade calculation and report generation</li>
+                    <li>Data persistence using MySQL</li>
+                </ul>
+                <a href="#" class="btn">View on GitHub</a>
+            </div>
+            <div class="project-item">
+                <h3>Weather Application</h3>
+                <p class="tech">JavaScript | API Integration | Bootstrap</p>
+                <p>Real-time weather information fetcher using OpenWeather API with dynamic UI showing:</p>
+                <ul>
+                    <li>Current weather conditions</li>
+                    <li>5-day forecast with charts</li>
+                    <li>Location-based weather search</li>
+                    <li>Responsive design for all devices</li>
+                </ul>
+                <a href="#" class="btn">Live Demo</a>
+                <a href="#" class="btn">GitHub Repository</a>
+            </div>
+            <div class="project-item">
+                <h3>Personal Portfolio Website</h3>
+                <p class="tech">HTML5 | CSS3 | JavaScript</p>
+                <p>Responsive personal website featuring:</p>
+                <ul>
+                    <li>Dark/light mode toggle</li>
+                    <li>Interactive project showcase</li>
+                    <li>Contact form with validation</li>
+                    <li>Smooth scrolling navigation</li>
+                </ul>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="exp-item">
+                <h3>Coding Club Member</h3>
+                <p class="org">South Asian University Tech Society</p>
+                <p class="details">Nov 2024 - Present</p>
+                <ul>
+                    <li>Participated in university hackathons and coding competitions, securing 2nd place in Algorithm Challenge</li>
+                    <li>Collaborated on open-source projects with peers, contributing to a campus navigation app</li>
+                    <li>Conducted workshops on Python programming for juniors, teaching basic to intermediate concepts</li>
+                    <li>Organized monthly coding challenges to foster competitive programming culture</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <h3>Freelance Web Developer</h3>
+                <p class="org">Self-Employed</p>
+                <p class="details">2023 - Present</p>
+                <ul>
+                    <li>Designed and deployed 5+ websites for local businesses, improving their online presence</li>
+                    <li>Created responsive layouts with modern UI/UX principles, increasing client engagement by 40%</li>
+                    <li>Implemented SEO best practices, resulting in higher search rankings for clients</li>
+                    <li>Provided maintenance and updates for existing client websites</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h4>Achievements</h4>
+                    <ul>
+                        <li>5-star rating in Python on HackerRank</li>
+                        <li>School Topper in Computer Science (Class XII)</li>
+                        <li>Finalist in SAU Hackathon 2024</li>
+                        <li>Gold Medal in National Science Olympiad</li>
+                        <li>District Chess Champion (2021)</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h4>Certifications</h4>
+                    <ul>
+                        <li>Google's Python Automation Course</li>
+                        <li>Web Development Bootcamp (Udemy)</li>
+                        <li>Introduction to AI & ML (Google)</li>
+                        <li>Data Structures Specialization (Coursera)</li>
+                        <li>Responsive Web Design (freeCodeCamp)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 | Designed and coded by K. Siddhartha</p>
+            <p>Last updated: May 2024 | <a href="#" style="color: var(--accent);">Download PDF Version</a></p>
+        </footer>
+    </div>
+</body>
+</html>
